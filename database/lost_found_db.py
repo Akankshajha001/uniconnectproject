@@ -3,7 +3,7 @@
 Lost & Found Database - SQLite persistent storage
 """
 
-import sqlite3
+
 import os
 from datetime import datetime
 from typing import List, Dict, Optional
