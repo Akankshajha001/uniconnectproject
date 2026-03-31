@@ -1,0 +1,132 @@
+what is subquery ?how does it execute?
+ans:- Subquery is the method in the sql to solve coplex qeries by writing ne query inside the other ,we can write inside the select, from, where etcs statement. it execute  in a way that firstly inner query produces the result and it passed to outer query.
+
+
+what is the difference between subquery and join?
+ans:- Subqueries are queries nested inside another to return a value or set used for filtering/calculations in the main query.where join is used when we  want data from  diiferenet tables then join the tables to get desire result.
+
+what is scalar subquery?where it can be used?
+ans:- A scalar subquery is an SQL query nested inside a larger statement that returns exactly one single value. If the subquery returns no rows.Scalar subqueries can be used almost anywhere in an SQL statement that a single column value is required like finding the employee who is earning highest salalry.
+
+can subquery return  multiple rows ? how do you handle that?
+ans:-Yes,subquery can return multiple rows based on use case.If a subquery is intended to return multiple rows, it must be used with an operator that can handle a set of results
+
+difference between correlated and non-correlated query?
+ans:-In correlated query subqueries depend on the main query for completion of its execution but in non-correlated query both query executed independently. 
+
+
+what is ctes?
+A common table expression is a temporary named result set that exists only for the duration of single SQL statement. It helps you break complex query into readable, logical blocks. 
+
+
+why do we use CTEs?
+1.improve readability
+2.simplifies comples queries
+3.avoids repeating subqueries
+4.makes debugging easier
+5.supports recurrsion
+6.better logical separation
+
+
+what DATEPART(),DATENAME(),DATETRUNC()?
+ans-:-
+DATEPART(), DATENAME(), and DATETRUNC() are SQL/data functions for extracting or modifying parts of a date; DATEPART() returns an integer (like '9' for September), DATENAME() returns a string (like 'September'), and DATETRUNC() returns a date truncated to a specified level (like the first day of the month). They help analyze time-series data by isolating components (year, month, day) or standardizing dates to a specific granularity (e.g., start of the week, month, year) for grouping and aggregation. 
+DATEPART() (Returns Integer)
+Purpose: Extracts a specific integer value for a date part (year, month, day, hour, etc.).
+Syntax: DATEPART(datepart, date).
+Example: DATEPART(month, '2024-12-25') returns 12 (an integer). 
+DATENAME() (Returns String)
+Purpose: Extracts a character string for a date part (e.g., 'December', 'Wednesday').
+Syntax: DATENAME(datepart, date).
+Example: DATENAME(month, '2024-12-25') returns 'December' (a string). 
+DATETRUNC() (Returns Date/Timestamp)
+Purpose: Truncates (cuts off) a date to a specified level, returning the start of that interval.
+Syntax: DATETRUNC(datepart, date) (syntax may vary slightly by database, e.g., DATE_TRUNC() in some).
+Example: DATETRUNC(month, '2024-12-25') returns '2024-12-01 00:00:00' (the first day of December). 
+Key Differences Summarized
+Return Type: DATEPART (int), DATENAME (string), DATETRUNC (date/timestamp).
+Output: DATEPART gives numbers (e.g., 9), DATENAME gives names (e.g., "September"), DATETRUNC gives a date set to the start of the period (e.g., 2024-09-01). 
+
+
+WHAT IS EOMONTH()?
+Ans:-EOMONTH() is a date function that returns the last date of a month for a given date.
+
+
+Q.Difference between DATEPART AND DATENAME?
+Q.Why is DATETRUNC preffred in analytics?
+Q.How do you find month-end dates?
+Q.How do you group data monthly?
+Q.What soes EOMONTH(date,-1) return?
+
+
+
+CASE-STATEMENT:=
+CASE 
+   WHEN xyz then ''
+   when zyc then ''
+END
+
+case when is an conditional expression in sql use to apply if else logic inside queries.
+It allows sql to return different results based on conditions.
+
+
+Q.Why do we use  CASE WHEN?
+ans-: conditional classification
+      business rule implementation
+      dynamic column creation
+      data transformation
+      replacing multiple if condition
+      Flag creation(YES/NO  , 1/0)
+
+
+
+==================================================================================================================
+
+
+                                                  DATA MODELLING:-
+       
+what is data modelling?:-
+ans:-It is the process of designing the structure of the data-how data is stored,organized and related - so that it supports business requirements efficiently.
+it answers:-
+what data do we store?
+how are different data enities related?
+
+
+why is data modelling important?
+-ensures  data consistency & integrity 
+-Reduces data redundancy
+-Improves query performance
+-Makes system scalable and maintainable
+-Act as a communication bridge between business & technical teams.
+
+
+what is natural keys and surrogate keys?
+ans:- A natural key is a column (or combination of columns) in a database table that uses existing, meaningful data from the real world to uniquely identify a record, like a Customer ID, Social Security Number, or VIN.
+
+
+-A surrogate key is an artificial, system-generated unique identifier (like an auto-incrementing number or GUID) used to uniquely identify records in a database table.
+
+
+
+
+
+     OLTP                                                 | OLAP
+---------------------------------------------------------------------------------------------------------------
+Online transaction processing                             |online analytical processing
+writes the data                                           |reads the data
+follow normalisation                                      |redundancy is there
+no redundancy                                             |Datawarehouse
+database                                                  |De-normalisation
+
+
+
+DIMENSIONAL DATA MODELLING:-OLAP or Datawarehouse use dimensional data modelling.
+Star Schema
+Snowflake Schema
+
+
+facts:-it consists of numerical data.
+Dimensions:-it consist of non-numerical data.
+
+
+
