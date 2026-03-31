@@ -2,6 +2,8 @@
 Uni-Connect - Main Application Entry Point
 A Streamlit-based platform for Lost & Found and Notes Exchange
 
+Author: Gaurav Pathak
+Description: Campus utility platform using in-memory Python data structures
 """
 
 import streamlit as st
@@ -62,7 +64,7 @@ def render_sidebar():
                 st.markdown("<h3 style='color: white;'>📝 Sign Up</h3>", unsafe_allow_html=True)
                 with st.form("sidebar_signup_form"):
                     name = st.text_input("Name", placeholder="Enter your name")
-                    roll_no = st.text_input("Roll Number", placeholder="e.g., 2311701")
+                    roll_no = st.text_input("Roll Number", placeholder="e.g., 2021-CS-001")
                     email = st.text_input("Email", placeholder="your.email@example.com")
                     password = st.text_input("Password", type="password", placeholder="Create a password")
                     signup_btn = st.form_submit_button("📝 Sign Up", use_container_width=True)
